@@ -27,13 +27,15 @@
 
       }
 
-      let pesoInformado = prompt("Informe su peso, por favor");
+      nombre = prompt("Informe su nombre, por favor");
 
-      let alturaInformado = prompt("Informe su altura, por favor");
+      pesoInformado = prompt(nombre + ", Informe su peso, por favor");
 
-      let imcPersona = calcularImc(pesoInformado, alturaInformado);
+      alturaInformado = prompt(nombre + ", Informe su altura, por favor");
 
-      imprimir("el imc de la persona es: " + imcPersona);
+      imcPersona = calcularImc(pesoInformado, alturaInformado);
+
+      imprimir(nombre + ", su imc calculado es: " + imcPersona);
 
     </script>
 </body>
