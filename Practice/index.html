@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+<body>
+<h1> Indice de masa muscular de una persona </h1>
+  
+    <script>
+
+      function saltarLinea() {
+        
+        document.write("<br>");
+
+      }      
+
+      function imprimir(mensaje) {
+
+        document.write(mensaje);
+
+      }
+
+      function calcularImc(peso, altura) {
+
+         imc = peso / (altura * altura);
+         return imc; 
+
+      }
+
+      let pesoInformado = prompt("Informe su peso, por favor");
+
+      let alturaInformado = prompt("Informe su altura, por favor");
+
+      let imcPersona = calcularImc(pesoInformado, alturaInformado);
+
+      imprimir("el imc de la persona es: " + imcPersona);
+
+    </script>
+</body>
+</html>

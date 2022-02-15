@@ -1,0 +1,59 @@
+h1 {
+    font-family: serif;
+    text-align: center;
+}
+
+h2 {
+    font-family: sans-serif;
+}
+
+.parrafos {
+    font-family: monospace;
+    text-align: right;
+    
+
+    background-color: red;
+    height: 150px;
+    width: 150px;
+    padding: 15px;
+}
+
+body {
+    font-family: "Helvetica", "Lucida Grande", sans-serif;
+    background-color: cadetblue;
+    background-repeat: no-repeat;
+    border: 1px solid red;
+    height: 2000px;
+    width: 2000px;
+    padding: 50px;
+    margin-left: 20px;      
+}
+
+ul {
+    list-style: square;
+}
+
+.section {
+    background-color: aqua;
+    height: 400px;
+    width: 400px;
+}
+
+.female {
+    background-color: white;
+    height: 200px;
+    width: 200px;
+}
+
+.male {
+    
+    height: 100px;
+    width: 100px;
+}
+
+
+.cat {
+    background-image: url(/img/img1.jpg);
+    height: inherit;
+    width: inherit;
+}
