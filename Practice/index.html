@@ -1,42 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
 
-<body>
-<h1> Indice de masa muscular de una persona </h1>
-  
-    <script>
+    <body>
+        <h1> Indice de masa muscular de una persona </h1>
 
-      function saltarLinea() {
-        
-        document.write("<br>");
+        <script>
+            function saltarLinea() {
 
-      }      
+                document.write("<br>");
 
-      function imprimir(mensaje) {
+            }
 
-        document.write(mensaje);
+            function imprimir(mensaje) {
 
-      }
+                document.write(mensaje);
 
-      function calcularImc(peso, altura) {
+            }
 
-         imc = peso / (altura * altura);
-         return imc; 
+            function calcularImc(peso, altura) {
 
-      }
+                imc = peso / (altura * altura);
+                return imc;
 
-      nombre = prompt("Informe su nombre, por favor");
+            }
 
-      pesoInformado = prompt(nombre + ", Informe su peso, por favor");
+            nombre = prompt("Informe su nombre, por favor");
 
-      alturaInformado = prompt(nombre + ", Informe su altura, por favor");
+            pesoInformado = prompt(nombre + ", Informe su peso, por favor");
 
-      imcPersona = calcularImc(pesoInformado, alturaInformado);
+            alturaInformado = prompt(nombre + ", Informe su altura, por favor");
 
-      imprimir(nombre + ", su imc calculado es: " + imcPersona);
+            imcPersona = calcularImc(pesoInformado, alturaInformado);
 
-    </script>
-</body>
+            imprimir(nombre + ", su imc calculado es: " + imcPersona);
+
+            saltarLinea();
+
+            if (imcPersona < 18.5) {
+                imprimir("Bajo peso, come bien");
+            }
+
+            if (imcPersona >= 18.5) {
+                if (imcPersona < 25)
+                    imprimir("Peso normal, sigue asi");
+            }
+
+            if (imcPersona >= 25) {
+                imprimir("Baja de peso amigo");
+            }
+
+            if (imcPersona >= 30) {
+                imprimir("estas obeso");
+            }
+        </script>
+    </body>
+
 </html>
