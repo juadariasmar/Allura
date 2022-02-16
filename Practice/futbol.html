@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <body>
+        <h1> Indice de masa muscular de una persona </h1>
+
+        <script>
+            function saltarLinea() {
+
+                document.write("<br>");
+
+            }
+
+            function imprimir(mensaje) {
+
+                document.write(mensaje);
+
+            }
+
+            var victorias = parseInt(prompt("Informe la cantidad de victorias"));
+            var empates = parseInt(prompt("Informe la cantidad de empates"));
+
+            puntosTotal = (victorias * 3) + empates;
+
+            imprimir("El total de puntos del equipos es:  " + puntosTotal);
+        </script>
+    </body>
+
+</html>
