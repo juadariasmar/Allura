@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <body>
+        <h1> Puedo o no puedo conducir? </h1>
+
+        <script>
+            function saltarLinea() {
+
+                document.write("<br>");
+
+            }
+
+            function imprimir(mensaje) {
+
+                document.write(mensaje);
+
+            }
+
+            var edad = parseInt(prompt("¿Cuál es tu edad?"));
+
+            var tieneLicencia = prompt("¿Tienes licencia? Responde S o N");
+
+            if ((edad >= 18) && ((tieneLicencia == "s") || (tieneLicencia == "S"))) {
+                imprimir("Si puedes conducir");
+            } else {
+                imprimir("no puedes conducir");
+            }
+        </script>
+    </body>
+
+</html>
