@@ -30,17 +30,24 @@
 
             var numeroPensado = loteria(10);
 
-            var numeroLanzado = parseInt(prompt("Ingrese un numero entre 0 y 10"));
 
-            if (numeroLanzado == numeroPensado) {
-                imprimir("Acerto");
-            } else {
-                if (numeroLanzado > numeroPensado) {
-                    imprimir("usted erro, el numero pensado: " + numeroPensado + ", era menor que su numero");
+            var intentos = 3;
+            var contador = 1;
+
+            while (contador <= intentos) {
+
+                var numeroLanzado = parseInt(prompt("Ingrese un numero entre 0 y 10"));
+
+                if (numeroLanzado == numeroPensado) {
+                    alert("Usted acerto");
+                    break;
                 } else {
-                    imprimir("usted erro, el numero pensado: " + numeroPensado + ", es mayor que su numero");
+                    alert("Usted erro);
+                    }
+
+                    contador++;
+
                 }
-            }
         </script>
     </body>
 
