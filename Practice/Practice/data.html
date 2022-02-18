@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <body>
+        <h1> Secret Game with JavaScript </h1>
+
+        <input type="text">
+        <button>Verificar si acerto con el secreto</button>
+
+        <script>
+            var secret1 = 1;
+            var secret2 = 3;
+            var secret3 = 5;
+            var secret4 = 7;
+
+            var input = document.querySelector('input');
+            input.focus(); //hago focus del cursor en el input
+
+            function verificar() {
+
+                if (secret1 == parseInt(input.value)) {
+
+                    alert("Usted acerto");
+
+                } else {
+
+                    alert("Usted erro");
+
+                }
+
+                if (secret2 == parseInt(input.value)) {
+
+                    alert("Usted acerto");
+
+                } else {
+
+                    alert("Usted erro");
+
+                }
+
+                if (secret3 == parseInt(input.value)) {
+
+                    alert("Usted acerto");
+
+                } else {
+
+                    alert("Usted erro");
+
+                }
+
+                if (secret4 == parseInt(input.value)) {
+
+                    alert("Usted acerto");
+
+                } else {
+
+                    alert("Usted erro");
+
+                }
+
+                //ejemplo de malas practicas
+
+                input.value = "";
+                input.focus();
+
+            }
+
+            var button = document.querySelector('button'); // creo una variable llamada button a la que le paso la interaccion del elemento button de html
+            button.onclick = verificar; // llamo la funcion verificar cuando se haga click en el boton
+        </script>
+    </body>
+
+</html>
