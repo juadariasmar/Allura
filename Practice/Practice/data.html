@@ -11,57 +11,29 @@
         <button>Verificar si acerto con el secreto</button>
 
         <script>
-            var secret1 = 1;
-            var secret2 = 3;
-            var secret3 = 5;
-            var secret4 = 7;
+            var secretos = [3, 5, 7, 9];
 
             var input = document.querySelector('input');
             input.focus(); //hago focus del cursor en el input
 
             function verificar() {
 
-                if (secret1 == parseInt(input.value)) {
+                var encontrado = false;
 
-                    alert("Usted acerto");
+                for (let i = 0; i < secretos.length; i++) {
 
-                } else {
+                    if (secretos[i] == parseInt(input.value)) {
 
-                    alert("Usted erro");
+                        alert("Usted acerto");
+                        encontrado = true;
+                        break;
 
-                }
-
-                if (secret2 == parseInt(input.value)) {
-
-                    alert("Usted acerto");
-
-                } else {
-
-                    alert("Usted erro");
+                    }
 
                 }
-
-                if (secret3 == parseInt(input.value)) {
-
-                    alert("Usted acerto");
-
-                } else {
-
-                    alert("Usted erro");
-
+                if (encontrado == false) {
+                    alert("usted erro");
                 }
-
-                if (secret4 == parseInt(input.value)) {
-
-                    alert("Usted acerto");
-
-                } else {
-
-                    alert("Usted erro");
-
-                }
-
-                //ejemplo de malas practicas
 
                 input.value = "";
                 input.focus();
