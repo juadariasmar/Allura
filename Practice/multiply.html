@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <body>
+        <h1> Programa - Calcular tabla de multiplicar </h1>
+
+        <script>
+            function saltarLinea() {
+
+                document.write("<br>");
+
+            }
+
+            function imprimir(mensaje) {
+
+                document.write(mensaje);
+
+            }
+
+            var multiplicador = 1;
+
+            imprimir("while");
+
+            saltarLinea();
+
+            while (multiplicador <= 10) {
+                imprimir(5 * multiplicador);
+
+                saltarLinea();
+
+                multiplicador += 1;
+
+            }
+
+            saltarLinea();
+            imprimir("FOR");
+            saltarLinea();
+
+            for (var multiplicador = 1; multiplicador <= 10; multiplicador++) {
+                imprimir(5 * multiplicador);
+                saltarLinea();
+            }
+        </script>
+    </body>
+
+</html>
