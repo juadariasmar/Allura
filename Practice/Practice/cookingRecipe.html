@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <body>
+        <h1> Cooking Recipe </h1>
+
+
+        <script>
+            let ingredients = [];
+
+            let cantidad = parseInt(prompt("Cuantos ingredientes quieres?: "));
+
+            let contador = 1;
+
+
+
+            while (contador <= cantidad) {
+
+                let ingredient = prompt("ingresa el ingrediente, " + contador + " por favor");
+
+                let encontrado = false;
+
+                if (ingredient != "") {
+
+                    for (let i = 0; i < ingredients.length; i++) {
+
+                        if (ingredient == ingredients[i]) {
+                            encontrado = true;
+                            break
+                        }
+
+                    }
+
+                    if (encontrado == false) {
+                        ingredients.push(ingredient);
+                        contador++
+                    }
+
+                }
+
+
+
+            }
+
+            console.log(ingredients);
+        </script>
+    </body>
+
+</html>
