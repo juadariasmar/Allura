@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <body>
+        <h1> Secret Game with JavaScript </h1>
+
+        <input type="text">
+        <button>Verificar si acerto con el secreto</button>
+
+        <script>
+            var input = document.querySelector("input");
+
+            function mostrarTexto() {
+
+                alert(input.value); //muestro el valor del inputo: texto ingresado
+            }
+
+            var button = document.querySelector("button");
+            button.onclick = mostrarTexto; //asigno la funcion a la variable para que escuche el evento del click
+        </script>
+        </script>
+    </body>
+
+</html>
