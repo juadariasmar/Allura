@@ -22,9 +22,11 @@
         c.strokeRect(x, y, 50, 50);
       }
 
-      drawCanvas(0, 0, "red");
-      drawCanvas(0, 50, "yellow");
-      drawCanvas(0, 100, "green");
+      for (let x = 0; x < 600; x += 50) {
+        for (let y = 0; y < 500; y += 50) {
+          drawCanvas(x, y, "white");
+        }
+      }
     </script>
   </body>
 </html>
