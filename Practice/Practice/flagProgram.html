@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas width="600" height="500"> </canvas>
+    <script>
+      var screen = document.querySelector("canvas");
+      var c = screen.getContext("2d");
+      c.fillStyle = "lightgray";
+      c.fillRect(0, 0, 600, 500);
+
+      c.fillStyle = "green";
+      c.fillRect(0, 0, 200, 500);
+
+      c.fillStyle = "red";
+      c.fillRect(400, 0, 200, 500);
+
+      c.fillStyle = "black";
+      c.beginPath();
+      c.moveTo(300, 250);
+      c.lineTo(200, 500);
+      c.lineTo(400, 500);
+      c.fill();
+
+      c.fillStyle = "blue";
+      c.beginPath();
+      c.arc(300, 250, 50, 0, Math.PI * 2);
+      c.fill();
+    </script>
+  </body>
+</html>

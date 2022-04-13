@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas width="600" height="500"> </canvas>
+    <script>
+      var screen = document.querySelector("canvas");
+      var c = screen.getContext("2d");
+
+      function drawCanvas(x, y, color) {
+        c.fillStyle = color;
+        c.fillRect(x, y, 50, 50);
+        c.strokeStyle = "black";
+        c.strokeRect(x, y, 50, 50);
+      }
+
+      drawCanvas(0, 0, "red");
+      drawCanvas(0, 50, "yellow");
+      drawCanvas(0, 100, "green");
+    </script>
+  </body>
+</html>
