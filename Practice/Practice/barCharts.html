@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas width="600" height="500"> </canvas>
+    <script>
+      var serie2009 = [6, 47, 41, 3, 3];
+      var serie2019 = [81, 9, 3, 3, 4];
+      var colors = ["blue", "green", "yellow", "red", "gray"];
+      var screen = document.querySelector("canvas");
+      var c = screen.getContext("2d");
+
+      function drawRectangle(x, y, width, height, color) {
+        c.fillStyle = color;
+        c.fillRect(x, y, width, height);
+        c.strokeStyle = "black";
+        c.strokeRect(x, y, width, height);
+      }
+
+      function writeText(x, y, text) {
+        c.font = "15px Georgia";
+        c.fillStyle = "black";
+        c.fillText(text, x, y);
+      }
+
+      function drawBar(x, y, serie, colors, text) {
+        writeText(x, y - 10, text);
+
+        var acumHeight = 0;
+        for (let i = 0; i < serie.length; i++) {
+          drawRectangle(x, y + acumHeight, 50, serie[i], colors[i]);
+          acumHeight += serie[i];
+        }
+      }
+
+      drawBar(50, 50, serie2009, colors, "2009");
+
+      drawBar(150, 50, serie2019, colors, "2019");
+    </script>
+  </body>
+</html>
