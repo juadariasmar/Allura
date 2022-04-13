@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas width="600" height="500"> </canvas>
+    <script>
+      var screen = document.querySelector("canvas");
+      var c = screen.getContext("2d");
+      c.fillStyle = "lightGray";
+      c.fillRect(0, 0, 600, 500);
+
+      function drawCircle(x, y, radio, color) {
+        c.fillStyle = color;
+        c.beginPath();
+        c.arc(x, y, radio, 0, 2 * Math.PI);
+        c.fill();
+      }
+
+      drawCircle(300, 250, 50, "red");
+      drawCircle(300, 250, 40, "white");
+      drawCircle(300, 250, 30, "red");
+      drawCircle(300, 250, 20, "white");
+      drawCircle(300, 250, 10, "red");
+      drawCircle(300, 250, 5, "white");
+    </script>
+  </body>
+</html>
