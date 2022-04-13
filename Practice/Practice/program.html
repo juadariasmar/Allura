@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas width="650" height="600"> </canvas>
+    <script>
+      document.querySelector("canvas").addEventListener("click", function (e) {
+        var x = e.offsetX;
+        var y = e.offsetY;
+        var c = this.getContext("2d");
+        c.beginPath();
+        c.arc(x, y, 10, 0, Math.PI * 2, false);
+        c.fillStyle = "red";
+        c.fill();
+      });
+    </script>
+  </body>
+</html>
