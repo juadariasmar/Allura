@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <canvas width="600" height="400"> </canvas>
+
+    <script>
+      var screen = document.querySelector("canvas");
+      var pen = screen.getContext("2d");
+      pen.fillStyle = "grey";
+      pen.fillRect(0, 0, 600, 400);
+
+      var canDraw = false;
+
+      var xRed = 0,
+        xGreen = 50,
+        xBlue = 100,
+        ySquare = 0,
+        sizeSquare = 50,
+        actualColor = "blue";
+
+      function drawCircle(x, y, actualColor) {
+        if (canDraw) {
+          pen.fillStyle = actualColor;
+          pen.beginPath();
+          pen.arc(x, y, 5, 0, Math.PI * 2);
+          pen.fill();
+        }
+      }
+
+      function drawSquare(x, y, sizeSquare, color) {
+        pen.fillStyle = color;
+        pen.fillRect(x, y, sizeSquare, sizeSquare);
+        pen.fill();
+      }
+
+      function drawColorPalette() {
+        drawSquare(xRed, ySquare, sizeSquare, "red");
+        drawSquare(xGreen, ySquare, sizeSquare, "green");
+        drawSquare(xBlue, ySquare, sizeSquare, "blue");
+      }
+
+      function enableDrawing() {
+        canDraw = true;
+      }
+
+      function disableDrawing() {
+        canDraw = false;
+      }
+
+      function areaToDraw(xCoor, yCoor) {
+        if (
+          xCoor >= 0 &&
+          xCoor < 3 * sizeSquare + 5 &&
+          yCoor >= 0 &&
+          yCoor < sizeSquare + 5
+        ) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      function mouseMovement(event) {
+        var x = event.pageX - screen.offsetLeft;
+        var y = event.pageY - screen.offsetTop;
+        if (areaToDraw(x, y)) {
+          drawCircle(x, y, actualColor);
+        }
+      }
+
+      function colorSelect(event) {
+        var x = event.pageX - screen.offsetLeft;
+        var y = event.pageY - screen.offsetTop;
+
+        if (y > ySquare && y < ySquare + sizeSquare) {
+          if (x > xRed && x < xRed + sizeSquare) {
+            actualColor = "red";
+            console.log(actualColor);
+          } else if (x > xGreen && x < xGreen + sizeSquare) {
+            actualColor = "green";
+            console.log(actualColor);
+          } else if (x > xBlue && x < xBlue + sizeSquare) {
+            actualColor = "blue";
+            console.log(actualColor);
+          }
+        }
+      }
+
+      screen.onmousemove = mouseMovement;
+
+      screen.onmousedown = enableDrawing;
+
+      screen.onmouseup = disableDrawing;
+
+      drawColorPalette();
+
+      screen.onclick = colorSelect;
+    </script>
+  </body>
+</html>

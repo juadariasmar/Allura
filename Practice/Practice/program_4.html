@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas width="600" height="400"> </canvas>
+
+    <script>
+      var screen = document.querySelector("canvas");
+      var pen = screen.getContext("2d");
+      pen.fillStyle = "grey";
+      pen.fillRect(0, 0, 600, 400);
+      var colors = ["blue", "red", "green"];
+      var indexColor = 0;
+
+      function drawCircle(event) {
+        var x = event.pageX - screen.offsetLeft;
+        var y = event.pageY - screen.offsetTop;
+        pen.beginPath();
+        pen.arc(x, y, 20, 0, Math.PI * 2);
+        pen.fillStyle = "red";
+        pen.fill();
+        console.log(x + "," + y);
+      }
+
+      screen.addEventListener("click", drawCircle);
+
+      function changeColor() {
+        indexColor++;
+        if (indexColor >= colors.length) {
+          indexColor = 0;
+        }
+        return false;
+      }
+
+      screen.oncontextmenu = changeColor;
+    </script>
+  </body>
+</html>

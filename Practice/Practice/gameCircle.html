@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas width="600" height="400"> </canvas>
+
+    <script>
+      var ratio = 10;
+      var xAxis;
+      var yAxis;
+      var screen = document.querySelector("canvas");
+      var pen = screen.getContext("2d");
+      pen.fillStyle = "lightgrey";
+      pen.fillRect(0, 0, 600, 400);
+
+      function drawCircle(x, y, ratio, color) {
+        pen.beginPath();
+        pen.arc(x, y, ratio, 0, Math.PI * 2);
+        pen.fillStyle = color;
+        pen.fill();
+      }
+
+      function clearScreen() {
+        pen.clearRect(0, 0, 600, 400);
+        pen.fillStyle = "lightgrey";
+        pen.fillRect(0, 0, 600, 400);
+      }
+
+      function drawObjective(x, y) {
+        drawCircle(x, y, ratio + 20, "red");
+        drawCircle(x, y, ratio + 10, "white");
+        drawCircle(x, y, ratio, "red");
+      }
+
+      function position(max) {
+        return Math.floor(Math.random() * max);
+      }
+
+      function updateScreen() {
+        clearScreen();
+        pen.fillStyle = "lightgrey";
+        pen.fillRect(0, 0, 600, 400);
+        xAxis = position(600);
+        yAxis = position(400);
+        drawObjective(xAxis, yAxis);
+      }
+
+      setInterval(updateScreen, 1000);
+
+      function shoot(event) {
+        var x = event.pageX - screen.offsetLeft;
+        var y = event.pageY - screen.offsetTop;
+
+        if (
+          x < xAxis + ratio &&
+          x > xAxis - ratio &&
+          y < yAxis + ratio &&
+          y > yAxis - ratio
+        ) {
+          alert("You Win!");
+        } else {
+          alert("You Lose!");
+        }
+      }
+
+      screen.addEventListener("click", shoot);
+    </script>
+  </body>
+</html>
